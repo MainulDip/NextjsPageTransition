@@ -3,5 +3,5 @@ const isProd = process.env.NODE_ENV === 'production'
 // git subtree push --prefix out origin gh-pages
 module.exports = {
   basePath: isProd ? '/NextjsPageTransition' : '',
-  assetPrefix: isProd ? '/NextjsPageTransition' : ''
+  assetPrefix: isProd ? '/NextjsPageTransition/' : ''
 }

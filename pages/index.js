@@ -2,6 +2,7 @@ import Head from 'next/head'
 import ArticleList from '../components/ArticleList'
 // import { server } from '../config/index'
 import { articles } from '../data'
+import { imageprefix } from '../config/index'
 
 export default function Home ({ articles }) {
   // console.log(articles)
@@ -13,7 +14,7 @@ export default function Home ({ articles }) {
     >
       <Head>
         <title>Create Next App</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href={`${imageprefix}/favicon.ico`} />
       </Head>
 
       <div>

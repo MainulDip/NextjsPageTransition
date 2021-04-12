@@ -1,5 +1,6 @@
 import articleStyle from '../styles/Article.module.css'
 import Link from 'next/link'
+import { imageprefix } from '../config/index'
 // import Image from 'next/image'
 
 const ArticleItem = ({ article, item }) => {
@@ -18,9 +19,9 @@ const ArticleItem = ({ article, item }) => {
             }}
           >
             <img
-              style={{ width: '100%', height: '100%', objectFit: 'contain'}}
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               // src={`/../../../images/${article.image}`}
-              src={`/images/Optimized/${article.image}`}
+              src={`${imageprefix}/images/Optimized/${article.image}`}
               alt='Picture of the author'
               // width={'auto'}
               // height={'auto'}

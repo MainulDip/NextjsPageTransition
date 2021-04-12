@@ -1,7 +1,7 @@
 // import {useRouter} from 'next/router'
 import Link from 'next/link'
 // import Image from 'next/image'
-import { server } from '../../../config/index'
+import { server, imageprefix } from '../../../config/index'
 import { motion } from 'framer-motion'
 // import vacation from './../../../images'
 import { articles } from '../../../data'
@@ -69,7 +69,7 @@ const article = ({ article }) => {
             <img
               style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               // src={`/../../../images/${article.image}`}
-              src={`/images/Optimized/${article.image}`}
+              src={`${imageprefix}/images/Optimized/${article.image}`}
               // alt='Picture of the author'
               // width={'auto'}
               // height={'auto'}
