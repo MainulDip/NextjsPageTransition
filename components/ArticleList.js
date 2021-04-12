@@ -44,13 +44,13 @@ const ArticleList = ({ articles }) => {
       initial='initial'
       animate='animate'
       exit='exit'
-      className={articleStyles.grid}
+      className="grid"
     >
       {articles.map((article, i) => (
         // <h3 key={i}>{article.title}</h3>
         <motion.div
           variants={fadeInUp}
-          className={articleStyles.card}
+          className="card"
           style={{}}
         >
           <ArticleItem key={i} article={article} />
