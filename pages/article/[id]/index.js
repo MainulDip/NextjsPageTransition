@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { server } from '../../../config/index'
 import { motion } from 'framer-motion'
 // import vacation from './../../../images'
+import { articles } from '../../../data'
 
 const easing = [0.6, -0.05, 0.01, 0.99]
 
@@ -65,7 +66,8 @@ const article = ({ article }) => {
             //   maxWidth: '200px'
             // }}
           >
-            <img style={{ width: '100%', height: '100%', objectFit: 'contain'}}
+            <img
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               // src={`/../../../images/${article.image}`}
               src={`/images/Optimized/${article.image}`}
               // alt='Picture of the author'
@@ -79,7 +81,8 @@ const article = ({ article }) => {
         </div>
 
         <div className='sArticle-right'>
-          <motion.h1 className='font-gray'
+          <motion.h1
+            className='font-gray'
             variants={fadeInUp}
             // initial='initial'
             // animate='animate'
@@ -87,7 +90,8 @@ const article = ({ article }) => {
           >
             {article.title}
           </motion.h1>
-          <motion.p className='text-fade'
+          <motion.p
+            className='text-fade'
             variants={fadeInUp}
             // initial='initial'
             // animate='animate'
@@ -125,8 +129,9 @@ export const getStaticProps = async context => {
   //   const res = await fetch(
   //     `https://jsonplaceholder.typicode.com/posts/${context.params.id}`
   //   )
-  const res = await fetch(`${server}/api/articles/${context.params.id}`)
-  const article = await res.json()
+  // const res = await fetch(`${server}/api/articles/${context.params.id}`)
+  // const article = await res.json()
+  const article = articles.find(article => article.id === context.params.id)
 
   return {
     props: {
@@ -137,8 +142,8 @@ export const getStaticProps = async context => {
 
 export const getStaticPaths = async () => {
   //   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
-  const res = await fetch(`${server}/api/articles`)
-  const articles = await res.json()
+  // const res = await fetch(`${server}/api/articles`)
+  // const articles = await res.json()
 
   const ids = articles.map(article => article.id)
   const paths = ids.map(id => ({ params: { id: id.toString() } }))
